@@ -1,0 +1,145 @@
+/* --- Theme & Variables (Consistent with Maker) --- */
+:root {
+  --primary-blue: #3b82f6;
+  --success-green: #10b981;
+  --warning-orange: #f59e0b;
+  --danger-red: #ef4444;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --border-color: #e5e7eb;
+  --background-light: #f9fafb;
+  --background-white: #ffffff;
+}
+
+/* --- Global Styles --- */
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background-color: var(--background-light);
+}
+
+/* --- Checker Container Card --- */
+.checker-container {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 3rem;
+  background: var(--background-white);
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 50px -20px rgba(20, 30, 70, 0.15);
+  animation: fade-in-up 0.7s ease-out;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.checker-container h2 {
+  font-size: 2.25rem;
+  color: var(--text-primary);
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+.checker-form h3,
+.checker-form p {
+  text-align: center;
+  color: var(--text-secondary);
+  margin: 0.25rem 0 2.5rem 0;
+}
+
+/* --- Fields for Review --- */
+.checker-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+.checker-field:last-of-type {
+  border-bottom: none;
+}
+
+.checker-field label {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+/* --- Status and Checkbox --- */
+.checker-status {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.checker-status input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--success-green); /* Modern checkbox color */
+}
+
+.status-badge {
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 999px; /* Pill shape */
+  color: var(--background-white);
+  font-size: 0.85rem;
+  min-width: 80px;
+  text-align: center;
+}
+
+.status-verified {
+  background: var(--success-green);
+}
+
+.status-pending {
+  background: var(--warning-orange);
+}
+
+/* --- Action Buttons --- */
+.checker-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.checker-actions button {
+  padding: 0.85rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  color: var(--background-white);
+  background-color: var(--success-green);
+}
+.btn-primary:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(16, 185, 129, 0.2);
+}
+
+.edit-btn {
+  color: var(--text-secondary);
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+}
+.edit-btn:hover {
+  background-color: var(--background-light);
+  border-color: #cfd8e3;
+}

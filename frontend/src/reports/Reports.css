@@ -1,0 +1,131 @@
+/* --- Theme & Variables (Consistent with Maker) --- */
+:root {
+  --primary-blue: #3B82F6;
+  --success-green: #10B981;
+  --warning-orange: #F59E0B;
+  --text-primary: #111827;
+  --text-secondary: #4B5563;
+  --border-color: #E5E7EB;
+  --background-light: #F9FAFB;
+  --background-white: #FFFFFF;
+}
+
+/* --- Global Styles --- */
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: var(--background-light);
+}
+
+/* --- Reports Container Card --- */
+.reports-container {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 3rem;
+  background: var(--background-white);
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 50px -20px rgba(20, 30, 70, 0.15);
+  animation: fade-in-up 0.7s ease-out;
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reports-container h2 {
+  font-size: 2.25rem;
+  color: var(--text-primary);
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+.reports-container p {
+  text-align: center;
+  color: var(--text-secondary);
+  margin: 0.25rem 0 2.5rem 0;
+  font-size: 1.1rem;
+}
+
+/* --- Report Table --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2.5rem;
+}
+
+th, td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+thead th {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background-color: var(--background-light);
+}
+
+tbody td {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+tbody tr:last-of-type td {
+  border-bottom: none;
+}
+
+/* Status Badge (re-used from Checker) */
+.status-badge {
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  color: var(--background-white);
+  font-size: 0.85rem;
+  min-width: 80px;
+  text-align: center;
+}
+.status-verified { background: var(--success-green); }
+.status-pending { background: var(--warning-orange); }
+
+/* --- Download Section --- */
+.download-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.download-wrapper span {
+  font-weight: 500;
+}
+
+.format-select {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.download-btn {
+  padding: 0.75rem 1.75rem;
+  font-weight: 600;
+  color: var(--background-white);
+  background-color: var(--primary-blue);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.download-btn:hover {
+  background-color: var(--primary-blue-dark);
+  transform: translateY(-2px);
+}

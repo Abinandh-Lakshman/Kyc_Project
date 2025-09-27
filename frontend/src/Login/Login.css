@@ -1,0 +1,220 @@
+/* --- Font Import --- */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* --- Theme & Variables --- */
+:root {
+  --primary-blue: #2563eb;
+  --primary-blue-dark: #1d4ed8;
+  --bg-dark-blue: #1e3a8a;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-light: #ffffff;
+  --border-color: #d1d5db;
+  --background-light: #f9fafb;
+  --background-white: #ffffff;
+  --danger-red: #dc2626;
+}
+
+/* --- Global Styles --- */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: var(--text-secondary);
+  background-color: var(--background-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Main Layout --- */
+.corporate-split {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* --- Left Panel: Brand Statement --- */
+.login-visual-panel {
+  flex: 1.1; /* Give it a bit more space */
+  background-color: var(--bg-dark-blue);
+  color: var(--text-light);
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  padding: 4rem;
+  box-sizing: border-box;
+  overflow: hidden; /* Hide overflow for animations */
+}
+
+.visual-content {
+  max-width: 450px;
+  text-align: center; /* Center image and text */
+}
+
+/* --- NEW: Illustration Styling --- */
+.login-illustration {
+  width: 100%;
+  max-width: 380px;
+  margin-bottom: 2.5rem;
+  opacity: 0;
+  animation: fade-in-up 1s 0.2s ease-out forwards,
+    float-animation 6s ease-in-out infinite;
+}
+
+@keyframes float-animation {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.text-content {
+  opacity: 0;
+  animation: fade-in-up 1s 0.4s ease-out forwards;
+}
+
+.visual-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.visual-content p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+/* --- Right Panel: Action Zone --- */
+.login-form-panel {
+  flex: 1;
+  background-color: var(--background-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  box-sizing: border-box;
+}
+
+.login-box {
+  max-width: 400px;
+  width: 100%;
+}
+
+.login-header {
+  margin-bottom: 2.5rem;
+}
+
+.login-header h2 {
+  font-size: 2rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  margin: 0;
+  opacity: 0;
+  animation: fade-in-up 1s 0.6s ease-out forwards;
+}
+
+.login-form {
+  opacity: 0;
+  animation: fade-in-up 1s 0.8s ease-out forwards;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: var(--background-light);
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--primary-blue);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(37, 99, 235, 0.15);
+}
+
+.error-message {
+  color: var(--danger-red);
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.form-switch {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  opacity: 0;
+  animation: fade-in-up 1s 1s ease-out forwards;
+}
+
+.form-switch span {
+  color: var(--primary-blue);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form-switch span:hover {
+  text-decoration: underline;
+}
+
+/* Staggered Animation Helper */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+  .login-visual-panel {
+    display: none;
+  }
+  .login-form-panel {
+    flex-basis: 100%;
+  }
+}
